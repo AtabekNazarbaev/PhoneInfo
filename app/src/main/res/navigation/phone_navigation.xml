@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/phone_navigation"
+    app:startDestination="@id/placeholderFragment">
+
+    <fragment
+        android:id="@+id/placeholderFragment"
+        android:name="uz.texnopos.phonesinfo.ui.main.PlaceholderFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" />
+    <fragment
+        android:id="@+id/appleFragment"
+        android:name="uz.texnopos.phonesinfo.ui.main.AppleFragment"
+        android:label="fragment_apple"
+        tools:layout="@layout/fragment_apple" >
+
+        <action
+            android:id="@+id/action_appleFragment_to_scrollingFragment2"
+            app:destination="@id/scrollingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/samsungFragment"
+        android:name="uz.texnopos.phonesinfo.ui.main.SamsungFragment"
+        android:label="fragment_samsung"
+        tools:layout="@layout/fragment_samsung" >
+
+        <action
+            android:id="@+id/action_samsungFragment_to_scrollingFragment2"
+            app:destination="@id/scrollingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/redmiFragment"
+        android:name="uz.texnopos.phonesinfo.ui.main.RedmiFragment"
+        android:label="fragment_redmi"
+        tools:layout="@layout/fragment_redmi" >
+
+        <action
+            android:id="@+id/action_redmiFragment_to_scrollingFragment2"
+            app:destination="@id/scrollingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/scrollingFragment"
+        android:name="uz.texnopos.phonesinfo.ui.main.ScrollingFragment"
+        android:label="fragment_scrolling"
+        tools:layout="@layout/fragment_scrolling" />
+</navigation>
