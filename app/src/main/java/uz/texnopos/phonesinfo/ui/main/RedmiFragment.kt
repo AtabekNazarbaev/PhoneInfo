@@ -2,10 +2,11 @@ package uz.texnopos.phonesinfo.ui.main
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
-import kotlinx.android.synthetic.main.fragment_apple.*
+import android.widget.Toast
+import androidx.navigation.NavController
+import androidx.navigation.Navigation
+import kotlinx.android.synthetic.main.fragment_redmi.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -19,20 +20,28 @@ class RedmiFragment : Fragment(R.layout.fragment_redmi) {
 
     private lateinit var dao: MyDao
     private var mAdapter = Adapter()
+    private lateinit var navController: NavController
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        navController = Navigation.findNavController(view)
+        recyclerViewRedmi.adapter = mAdapter
         dao = MyDatabase.getInstance(requireContext()).phonesDao()
-        mAdapter.models = dao.getSortPhones(1)
-        recyclerView.adapter = mAdapter
-//        setData()
+        setData()
+
+        mAdapter.setOnItemClickListener {
+            val action = RedmiFragmentDirections.actionRedmiFragmentToScrollingFragment(it.id,it.name)
+            navController.navigate(action)
+        }
+
     }
 
-//    private fun setData() {
-        //        CoroutineScope(Dispatchers.Main).launch {
-//            mAdapter.models = withContext(Dispatchers.IO) {
-//                dao.getSortPhones(1)
-//            }
-//        }
-//    }
+
+    private fun setData() {
+        CoroutineScope(Dispatchers.Main).launch {
+            mAdapter.models = withContext(Dispatchers.IO) {
+                dao.getSortPhones(1)
+            }
+        }
+    }
 }

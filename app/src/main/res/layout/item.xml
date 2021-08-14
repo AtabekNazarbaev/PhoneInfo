@@ -4,7 +4,7 @@
     android:layout_width="190dp"
     android:layout_height="250dp"
     android:layout_margin="5dp"
-    android:background="#FFFF00"
+    android:background="#D6D6C3"
     android:padding="5dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout

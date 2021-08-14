@@ -24,8 +24,15 @@ class Adapter : RecyclerView.Adapter<Adapter.MyViewHolder>() {
                 itemView.context.packageName
             )
             itemView.ivImage.setImageResource(resId)
-
+            itemView.setOnClickListener {
+                onClick.invoke(model)
+            }
         }
+    }
+
+    private var onClick: (model: Model) -> Unit = {}
+    fun setOnItemClickListener(onClick: (model: Model) -> Unit) {
+        this.onClick = onClick
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {

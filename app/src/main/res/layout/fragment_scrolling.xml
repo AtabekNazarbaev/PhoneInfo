@@ -18,7 +18,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/Title"
+            android:id="@+id/tvTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_vertical"
@@ -38,34 +38,74 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/solText"
+            android:id="@+id/tvOC"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="25dp"
             android:layout_margin="@dimen/text_margin"
-            android:text="@string/large_text"
-            app:layout_constraintTop_toBottomOf="@id/Title" />
+            android:layout_marginTop="24dp"
+            android:text="OC: Android 10"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@id/tvTitle" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerViewTop"
+        <TextView
+            android:id="@+id/tvScreen"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="25dp"
+            android:layout_margin="@dimen/text_margin"
             android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp"
-            android:orientation="horizontal"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            app:layout_constraintTop_toBottomOf="@id/solText" />
+            android:text="Screen: 6.53"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@id/tvOC" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerViewBottom"
+        <TextView
+            android:id="@+id/tvWeight"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="25dp"
+            android:layout_margin="@dimen/text_margin"
             android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp"
-            android:orientation="horizontal"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/recyclerViewTop" />
+            android:text="Weight: 198g"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@id/tvScreen" />
+
+        <TextView
+            android:id="@+id/tvCPU"
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:layout_margin="@dimen/text_margin"
+            android:layout_marginTop="16dp"
+            android:text="CPU: 2000 МГц"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@id/tvWeight" />
+
+        <TextView
+            android:id="@+id/tvMemory"
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:layout_margin="@dimen/text_margin"
+            android:layout_marginTop="16dp"
+            android:text="Memory: 64/128 ГБ"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@id/tvCPU" />
+
+        <TextView
+            android:id="@+id/tvYearOfIssue"
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:layout_margin="@dimen/text_margin"
+            android:layout_marginTop="16dp"
+            android:text="Дата выпуска: 2020"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@id/tvMemory" />
+
+        <TextView
+            android:id="@+id/tvFingerprint"
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:layout_margin="@dimen/text_margin"
+            android:layout_marginTop="16dp"
+            android:text="Отпечатка пальцев: есть✅"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@id/tvYearOfIssue" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 </androidx.core.widget.NestedScrollView>
